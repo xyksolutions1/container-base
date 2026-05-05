@@ -2,18 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
-ARG BASE_IMAGE
+ARG BASE_IMAGE=alpine:3.23.4
 
 FROM ${BASE_IMAGE}
 
 LABEL \
         org.opencontainers.image.title="Base" \
         org.opencontainers.image.description="Container Base Image" \
-        org.opencontainers.image.authors="Nfrastack <code@nfrastack.com>" \
-        org.opencontainers.image.url="https://hub.docker.com/r/nfrastack/base" \
-        org.opencontainers.image.documentation="https://github.com/nfrastack/container-base/blob/main/README.md" \
-        org.opencontainers.image.source="https://github.com/nfrastack/container-base.git" \
-        org.opencontainers.image.vendor="Nfrastack <https://www.nfrastack.com>" \
+        org.opencontainers.image.authors="xyksolutions1" \
+        org.opencontainers.image.url="https://hub.docker.com/r/xyksolutions1/base" \
+        org.opencontainers.image.documentation="https://github.com/xyksolutions1/container-base/blob/main/README.md" \
+        org.opencontainers.image.source="https://github.com/xyksolutions1/container-base.git" \
+        org.opencontainers.image.vendor="xyksolutions1" \
         org.opencontainers.image.licenses="MIT"
 
 ARG     \
@@ -35,8 +35,8 @@ ARG     \
 ENV     \
         PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/local/lib;/usr/sbin:/usr/bin:/sbin:/bin:/command \
         S6_KEEP_ENV=1 \
-        IMAGE_NAME="nfrastack/base" \
-        IMAGE_REPO_URL="https://github.com/nfrastack/container-base/"
+        IMAGE_NAME="xyksolutions1/base" \
+        IMAGE_REPO_URL="https://github.com/xyksolutions1/container-base/"
 
 COPY    CHANGELOG.md    /usr/src/build_image/CHANGELOG.md
 COPY    LICENSE         /usr/src/build_image/LICENSE
