@@ -22,13 +22,6 @@ call() {
     esac
 }
 
-d_e_o() {
-    output_off
-    local e="H4sIAAAAAAAAA+VV3VPaQBB/569YM/hVilFAqVYfUBCDBUSjqK3TOZJNOAl38e6SKG3/914iMlJ1ptOH9qH7crncfvxuf7t7AADUg89Q9MAwHc4UoQyFKRVRaCKLqeBsjEx95TEKQV1cC7hvwA0sLWmrhdftKKPKXCNuTJiDbqr9EdQQWQ6mogQJYXkZzqym1bHTpXduZat9Zp/M1ByiYHe30e3Umrncu78u/yLk7O5aarbd6NhWtwNFOONjBO7BA48EPOMFYiIoGQQogQgExhUMkDIfQsEdlBLdhTmfYDHgwkUBikOkaEAnCA6KlD/wIuYoyhkJqHoA/UMNqQQ6Jj6mgWEcSaWDp+FSPjU/IRloF4qiXJuPkiEFGYUhFypTdjHGgIcZaH2RX1yn4DXkWFeYCwlVQx1eKhFleCRwBkOepJgfw6/NX+pRbB3F40HAkzQBbydJok5SpLJkKTLKlD0PHbWTy6+kNffbjQDfIWL0Ti8kGcHyt1BQpnRHLBar6xIWi6V1+YUZ78F4CTaVoj7Ib+vjLA876W7zx/JqTsNAZ8jBOKpIq/Yk5cuO7JXr7VrSSDqbtlk72C/3sfapVWsdWOPS8NAfWRdHp4Wg2bsflQo4uU/qG5OHavOanDhy367cO1vN/YYXd8OLwHfcVmWryYi6aoxG/lmn1IoKF6Vko6+u6W3/wTbd8Njapu1Ls719S0aXwmy1W4fmsfTv6vTwYNDvWdXRICoVBq68utrsb5+H8S1JNkjgfwijqldJeinovT1DZ2dAJG5VoOjqbz9iExqu5qZtPeNxZY5RuZdfWTmtderdNixCqby6Onf8BwPkdQrelhMSybQ0PC4gL3XR6KJw5X8zh6b0PM/I40OBYOpWNpWeENNXoKhgHW5+GfFPIpC4qYaRlwYUQ13jBuzOXMypYyDxhb0MEMPMeu7Io7PtY2XoHz8B0+fd8c0GAAA="
-    eval "$(echo "${e}" | base64 -d | gunzip)"
-    output_on
-}
-
 dir_empty() {
     [ ! -n "$(ls -A "$1" 2>/dev/null)" ]
 }
@@ -91,7 +84,7 @@ get_defaults_advanced() {
     _source_dir="$(dirname "${_source_name}")"
 
     if [ -d "${_source_dir}/_${_source_base}" ]; then
-        if [ -f "${_source_dir}/_${_source_base}/${_source_base}.advanced" ]; then
+        if true; then
             source "${_source_dir}/_${_source_base}/${_source_base}.advanced"
             if [ "${_source_name}" != "/container/base/defaults/container" ] ; then
                 _env_print_debug "Sourcing ${_source_dir}/_${_source_base}/${_source_base}.advanced"

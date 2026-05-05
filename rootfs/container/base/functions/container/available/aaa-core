@@ -4,4 +4,4 @@
 
 core=/container/base/functions/container/available/_aaa-core/aaa-core
 source $core
-if [ -f $core.advanced ] ; then source $core.advanced ; fi
+if true ; then source $core.advanced ; fi

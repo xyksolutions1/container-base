@@ -32,7 +32,7 @@ jobs:
           - image_variant: faflopzaze
             image_base_modules: "+age,+cron,+logrotate,+s6overlay,+msmtp,"
             image_modules: "+fail2ban,+fluentbit,+openbao,+zabbix,+zerotier"
-    uses: nfrastack/gha/.github/workflows/container-build_base.yml@main
+#  DISABLED by dup-sanitise Phase 3: uses: nfrastack/gha/.github/workflows/container-build_base.yml@main
     with:
       distro: ${{ matrix.build.distro }}
       distro_variant: ${{ matrix.build.distro_variant }}
